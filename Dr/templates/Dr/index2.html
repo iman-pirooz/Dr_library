@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% load static %}
+
+
+
+{% block page_title %} 
+    days 
+{% endblock page_title %}
+
+
+
+{%  block header_refrences %}
+<link rel="stylesheet" href="{% static 'Dr/Dr.css' %}" >
+{% endblock  %}
+
+
+
+{% block content %}
+{% include "Dr/includes/header.html" %}
+    <ul>
+    {% for day in days %}
+    <li><a href="{% url "days-of-week" day %}"> {{day | title}} </a></li>
+    <!-- RAHE DOVOM =============>>>>>>>>>> <li><a href="/days/{{day}}"> {{day | title}} </a></li> -->
+    {% endfor %}
+    </ul>
+{% endblock %}

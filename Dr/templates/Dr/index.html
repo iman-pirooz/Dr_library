@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% block page_title %} days info {% endblock %}
+
+
+{% block content %}
+
+{% include "Dr/includes/header.html" %}
+
+        <h1> {{day|title}} </h1>
+
+        {% if day_data is not None %}
+            <h2> {{ day_data|add:' **###@@@@@' }} </h2>
+        {% else %}
+            <p> there is no data </p>
+        {% endif %}
+
+{% endblock %}
